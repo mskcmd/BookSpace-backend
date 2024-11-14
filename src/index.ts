@@ -1,4 +1,4 @@
-import express, { Express } from "express";
+import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 dotenv.config();
 import { connectDB } from "./config/mongoAuth";
@@ -20,6 +20,11 @@ app.use(
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.get("/", (req: Request, res: Response) => {
+  res.send("Server is running");
+});
+
 app.use(booksRoute);
 
 app.listen(port, () => {
