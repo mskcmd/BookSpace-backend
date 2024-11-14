@@ -11,7 +11,7 @@ const bookRoutes_1 = __importDefault(require("./routes/bookRoutes"));
 const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
 (0, mongoAuth_1.connectDB)();
-const allowedOrigin = process.env.ALLOWED_ORIGIN || "http://localhost:5173";
+const allowedOrigin = process.env.ALLOWED_ORIGIN || "*";
 const port = process.env.PORT || 5000;
 app.use((0, cors_1.default)({
     origin: allowedOrigin,

@@ -8,7 +8,7 @@ import cors from "cors";
 const app: Express = express();
 connectDB();
 
-const allowedOrigin = process.env.ALLOWED_ORIGIN || "http://localhost:5173";
+const allowedOrigin = process.env.ALLOWED_ORIGIN || "*";
 const port = process.env.PORT || 5000;
 
 app.use(
